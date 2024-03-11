@@ -1,0 +1,29 @@
+.navbar {
+    background-color: white;
+    padding: 10px 0;
+    text-align: left;
+    overflow: hidden;
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+}
+
+.navbar button {
+    background-color: transparent;
+    color: red; 
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.navbar button:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 1.8%;
+    margin-left: 10px;
+}
