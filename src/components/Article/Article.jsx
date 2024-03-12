@@ -27,7 +27,7 @@ const Article = () => {
     }, [articleId]);
 
     const increaseVotes = (articleId) => {
-        const increase = {inc_votes: + 1}
+        const increase = {inc_votes: 1}
         newsApi.patch(`/articles/${articleId}`, increase)
         .then((response) => {
             const data = response.data.article;
@@ -60,8 +60,8 @@ const Article = () => {
             <p className='articleBody'>{article.body}</p>
             <p className='articleTopic'>Topic: {article.topic}</p>
             <p className='articleVotes'>Votes: {article.votes} 
-            <button className='voteBtn' onClick={() => {increaseVotes(article.article_id)}}>Like</button>
-            <button className='voteBtn' onClick={() => {decreaseVotes(article.article_id)}}>Dislike</button>
+            <button className='voteBtn' onClick={() => {increaseVotes(article.article_id)}}>👍</button>
+            <button className='voteBtn' onClick={() => {decreaseVotes(article.article_id)}}>👎</button>
             </p>
             <p className='articleTime'>Date Posted: {formatDate(article.created_at)}</p>
         </div>
