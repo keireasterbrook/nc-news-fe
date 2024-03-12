@@ -52,6 +52,19 @@ const Comments = () => {
         
     };
 
+    const handleDelete = (commentId, user) => {
+
+        if(selectedUser === user){
+        newsApi.delete(`comments/${commentId}`)
+        .then(() => {
+            confirm('Comment deleted');
+        })
+        .catch((error) => {console.log(error)})
+    } else {
+        alert('You cannot delete another users comment')
+    }
+    }
+
     if(isLoading){
         return <Loading />;
     }
@@ -99,6 +112,7 @@ const Comments = () => {
                         <p className='commentBody'>{comment.body}</p>
                         <p className='commentVotes'>Votes: {comment.votes}</p>
                         <p className='commentDate'>Date Posted: {formatDate(comment.created_at)}</p> 
+                        <button onClick={() => handleDelete(comment.comment_id, comment.author)}>Delete</button>
                     </div>
                 );
             })}

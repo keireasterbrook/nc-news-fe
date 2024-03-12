@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
       <Nav/>
         <Routes>
-          <Route path='/' element={<Home />}></Route>
+          <Route path='/' element={<Home articles={articles} setArticles={setArticles}/>}></Route>
           <Route path='/articles' element={<Articles articles={articles} setArticles={setArticles}/>}></Route>
           <Route path='/articles/:article_id' element={<Article />}></Route>
           <Route path='/articles/:article_id/comments' element={<Comments />}></Route>
