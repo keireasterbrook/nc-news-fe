@@ -26,6 +26,27 @@ const Article = () => {
         })
     }, [articleId]);
 
+    const increaseVotes = (articleId) => {
+        const increase = {inc_votes: + 1}
+        newsApi.patch(`/articles/${articleId}`, increase)
+        .then((response) => {
+            const data = response.data.article;
+            setArticle(data)
+        })
+        .catch((error) => {console.log(error)})
+    }
+
+    const decreaseVotes = (articleId) => {
+        const decrease = {inc_votes: - 1}
+        newsApi.patch(`/articles/${articleId}`, decrease)
+        .then((response) => {
+            const data = response.data.article;
+            setArticle(data)
+        })
+        .catch((error) => {console.log(error)})
+    }
+
+
     if(isLoading){
         return <Loading />
     }
@@ -38,7 +59,10 @@ const Article = () => {
             <p className='articleAuthor'>Author: {article.author}</p>
             <p className='articleBody'>{article.body}</p>
             <p className='articleTopic'>Topic: {article.topic}</p>
-            <p className='articleVotes'>Votes: {article.votes}</p>
+            <p className='articleVotes'>Votes: {article.votes} 
+            <button className='voteBtn' onClick={() => {increaseVotes(article.article_id)}}>Like</button>
+            <button className='voteBtn' onClick={() => {decreaseVotes(article.article_id)}}>Dislike</button>
+            </p>
             <p className='articleTime'>Date Posted: {formatDate(article.created_at)}</p>
         </div>
         <div>

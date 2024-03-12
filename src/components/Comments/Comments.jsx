@@ -2,6 +2,7 @@ import './Comments.css'
 import { useParams } from 'react-router-dom';
 import newsApi from '../utils/newsAPI'; 
 import { useEffect, useState } from 'react';
+import Loading from '../Loading/Loading';
 
 function formatDate(createdAtDate) {
     const date = new Date(createdAtDate);
@@ -12,15 +13,20 @@ const Comments = () => {
     const params = useParams();
     const articleId = params.article_id
     const [comments, setComments] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         newsApi.get(`./articles/${articleId}/comments`)
         .then((response) => {
             const data = response.data.comments
-            
             setComments(data)
+            setIsLoading(false)
         })
     }, [articleId])
+
+    if(isLoading){
+        return <Loading />
+    }
 
     return (
         <>
