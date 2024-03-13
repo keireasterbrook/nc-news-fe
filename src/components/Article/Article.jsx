@@ -17,6 +17,8 @@ const Article = () => {
     const [article, setArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
 
+
+
     useEffect(() => {
         newsApi.get(`/articles/${articleId}`)
         .then(response => {
@@ -66,7 +68,7 @@ const Article = () => {
             <p className='articleTime'>Date Posted: {formatDate(article.created_at)}</p>
         </div>
         <div>
-            <Comments articleId={articleId}/>
+            <Comments articleId={articleId} />
         </div>
         </>
         

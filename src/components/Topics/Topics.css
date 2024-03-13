@@ -1,4 +1,4 @@
-.articlesList {
+.topicArticlesList {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -6,42 +6,44 @@
     justify-content: center;
 }
 
-.articlesCard {
+.topicArticlesCard {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
-    width: 250px;
+    width: 400px;
 }
 
-.articlesCard:hover {
+.topicArticlesCard:hover {
     box-shadow: 4px 3px rgba(0, 0, 0, 0.522);
 }
 
-.articlesImg {
+.topicArticlesImg {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
 
-.articlesDetails {
+.topicArticlesDetails {
     margin-top: 10px;
 }
 
-.articlesTitle {
+.topicArticlesTitle {
     font-size: 18px;
     margin-bottom: 5px;
     font-weight: bolder;
 }
 
-.articlesTime {
+.topicArticlesTime {
     font-size: 16px;
     
 }
 
-.title {
-    display: flex;
-    justify-content: center;
+.topicTitle {
+    text-align: center;
     margin-top: 100px;
     font-size: 50px;
     color: red;
 }
+
+
+

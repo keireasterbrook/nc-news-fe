@@ -80,20 +80,18 @@ const Comments = () => {
     })
 
 
-    return (
-        <>
+
+return (
+    <>
         <h1 className='commentsTitle'>Comments</h1>
         <div className='comment'>
-        <select value={selectedUser} onChange={(user) => 
-            setSelectedUser(user.target.value)}>
-                    <option value="select">Select User</option>
-                    
-                    {users.map((user, index) => (
-                        
-                        <option key={index} value={user}>{user}</option>
-                    ))}
-                </select>
-        <form onSubmit={handleComment}>
+            <select value={selectedUser} onChange={(user) => setSelectedUser(user.target.value)}>
+                <option value="select">Select User</option>
+                {users.map((user, index) => (
+                    <option key={index} value={user}>{user}</option>
+                ))}
+            </select>
+            <form onSubmit={handleComment}>
                 <textarea 
                     name="addComment" 
                     id="addComment" 
@@ -102,7 +100,8 @@ const Comments = () => {
                     value={newComment}
                     placeholder='Your Comment Here...'
                     onChange={(comment) => {setNewComment(comment.target.value)}}
-                 required></textarea>
+                    required
+                ></textarea>
                 <input type="Submit" />
             </form>
             {comments.map((comment) => {
@@ -112,13 +111,16 @@ const Comments = () => {
                         <p className='commentBody'>{comment.body}</p>
                         <p className='commentVotes'>Votes: {comment.votes}</p>
                         <p className='commentDate'>Date Posted: {formatDate(comment.created_at)}</p> 
-                        <button onClick={() => handleDelete(comment.comment_id, comment.author)}>Delete</button>
+                        {selectedUser === comment.author && (
+                            <button onClick={() => handleDelete(comment.comment_id, comment.author)}>Delete</button>
+                        )}
                     </div>
                 );
             })}
         </div>
-        </>
-    );
+    </>
+);
+
 };
 
 export default Comments;

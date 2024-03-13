@@ -1,7 +1,6 @@
 .navbar {
     background-color: white;
     padding: 10px 0;
-    text-align: left;
     overflow: hidden;
     position: fixed; 
     top: 0; 
@@ -17,13 +16,20 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 40px;
+} 
+
+.users {
+    text-align: right;
 }
+
+
 
 .navbar button:hover {
     text-decoration: underline;
 }
 
 .logo {
-    width: 1.8%;
+    width: 3.5%;
     margin-left: 10px;
+    text-align: left;
 }
