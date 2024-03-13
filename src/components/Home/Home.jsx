@@ -1,6 +1,6 @@
 import './Home.css'
 import newsApi from '../utils/newsAPI';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function formatDate(createdAtDate) {
@@ -8,7 +8,9 @@ function formatDate(createdAtDate) {
     return date.toLocaleDateString('en-GB');
 }
 
-const Home = ({ articles, setArticles }) => {
+const Home = () => {
+
+    const [articles, setArticles] = useState([])
 
     useEffect(() => {
         newsApi.get('/articles')
@@ -19,10 +21,28 @@ const Home = ({ articles, setArticles }) => {
         })
     }, [])
 
+    const allTopics = []
+
+    {articles.map((article) => {
+        if(!allTopics.includes(article.topic)){
+        return (
+            allTopics.push(article.topic)
+        )
+        }
+    })}  
+
 
     return (
         <>
         <h1 className='homeTitle'>Breaking News</h1>
+            {allTopics.map((topic) => {
+                return (
+                    <Link to={{ pathname: `/topics/${topic}`, state: articles }}>
+                    <button className='topicBtn' key={topic}>{topic}</button>
+                    </Link>
+                )
+            })}
+           
         <div className='homeArticlesList'>
             {articles.map((article, index) => {
                 const isMostRecent = index === 0;
