@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import './Article.css';
 import newsApi from '../utils/newsAPI'; 
 import Loading from '../Loading/Loading';
@@ -16,7 +16,7 @@ const Article = () => {
     const articleId = params.article_id
     const [article, setArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
-
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -28,9 +28,9 @@ const Article = () => {
         })
         .catch((error) => {
             console.log(error)
-            alert('Article does not exist')
+            navigate('/*')
         })
-    }, [articleId]);
+    }, [articleId, navigate]);
 
     const increaseVotes = (articleId) => {
         const increase = {inc_votes: 1}
@@ -58,7 +58,9 @@ const Article = () => {
     }
 
     return (
-        <>
+        <div>
+            
+        <Link to='/' className='backBtn'><button>Back to all Articles</button></Link>
         <div className='article'>
             <h1 className='articleTitle'>{article.title}</h1>
             <img src={article.article_img_url} alt="article image" className='articleImg' />
@@ -74,7 +76,7 @@ const Article = () => {
         <div>
             <Comments articleId={articleId} />
         </div>
-        </>
+        </div>
         
     );
 }

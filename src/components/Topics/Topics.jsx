@@ -1,8 +1,7 @@
 import './Topics.css'
-import { useParams} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import newsApi from '../utils/newsAPI';
-import { Link } from 'react-router-dom';
+import {useParams, useNavigate, Link } from 'react-router-dom';
 
 function formatDate(createdAtDate) {
     const date = new Date(createdAtDate);
@@ -14,6 +13,7 @@ function formatDate(createdAtDate) {
 const Topics = () => {
     const params = useParams();
     const topic = params.topic
+    const navigate = useNavigate()
 
     const [topicArticles, setTopicArticles] = useState([])
     
@@ -22,12 +22,11 @@ const Topics = () => {
         .then((response) => {
             const data = response.data.article
             if(data.length === 0){
-                alert('topic does not exist')
-            } else {
-                setTopicArticles(data)
+                navigate('*')
             }
+            else {setTopicArticles(data)}
         })
-    }, [])
+    }, [navigate])
 
 
     return (
