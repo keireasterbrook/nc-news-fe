@@ -5,6 +5,7 @@ import Home from './components/Home/Home'
 import Article from './components/Article/Article'
 import Comments from './components/Comments/Comments'
 import Topics from './components/Topics/Topics'
+import Error from './components/Error/Error'
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
           <Route path='/articles/:article_id' element={<Article />}></Route>
           <Route path='/articles/:article_id/comments' element={<Comments />}></Route>
           <Route path='/topics/:topic' element={<Topics />}></Route>
-          <Route path="*" element={<Home />} /> 
+          <Route path="/*" element={<Error />} /> 
 
         </Routes>
       
