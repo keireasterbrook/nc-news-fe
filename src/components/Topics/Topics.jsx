@@ -21,8 +21,11 @@ const Topics = () => {
         newsApi.get(`/articles?topic=${topic}`)
         .then((response) => {
             const data = response.data.article
-            setTopicArticles(data)
-            
+            if(data.length === 0){
+                alert('topic does not exist')
+            } else {
+                setTopicArticles(data)
+            }
         })
     }, [])
 
