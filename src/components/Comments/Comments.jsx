@@ -1,12 +1,26 @@
 import './Comments.css';
 import { useParams } from 'react-router-dom';
 import newsApi from '../utils/newsAPI'; 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import Loading from '../Loading/Loading';
 
 function formatDate(createdAtDate) {
     const date = new Date(createdAtDate);
     return date.toLocaleDateString('en-GB');
+}
+
+function allUsers(comments) {
+    const newUsers = []
+    comments.map((comment) =>{
+    
+        if(!newUsers.includes(comment.author)){
+             newUsers.push(comment.author)
+        } 
+        
+    })
+
+    return newUsers;
+
 }
 
 const Comments = () => {
@@ -16,6 +30,7 @@ const Comments = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [newComment, setNewComment] = useState('');
     const [selectedUser, setSelectedUser] = useState('');
+    const users = useMemo(() => allUsers(comments), [comments])
 
     useEffect(() => {
         newsApi.get(`./articles/${articleId}/comments`)
@@ -69,16 +84,9 @@ const Comments = () => {
         return <Loading />;
     }
 
-    const users = []
-
-    comments.map((comment) =>{
     
-        if(!users.includes(comment.author)){
-             users.push(comment.author)
-        } 
-        
-    })
 
+    
 
 
 return (
