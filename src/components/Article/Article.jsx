@@ -26,6 +26,10 @@ const Article = () => {
             setArticle(data)
             setIsLoading(false)
         })
+        .catch((error) => {
+            console.log(error)
+            alert('Article does not exist')
+        })
     }, [articleId]);
 
     const increaseVotes = (articleId) => {
