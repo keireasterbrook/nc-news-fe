@@ -10,30 +10,22 @@ function formatDate(createdAtDate) {
 }
 
 
+
 const Topics = () => {
     const params = useParams();
     const topic = params.topic
 
-    const [allArticles, setAllArticles] = useState([])
+    const [topicArticles, setTopicArticles] = useState([])
     
     useEffect(() => {
-        newsApi.get('/articles')
+        newsApi.get(`/articles?topic=${topic}`)
         .then((response) => {
             const data = response.data.article
-            setAllArticles(data)
+            setTopicArticles(data)
             
         })
     }, [])
 
-    const topicArticles = []
-
-    {allArticles.map((article) => {
-        if(article.topic === topic){
-        return (
-            topicArticles.push(article)
-        )
-        }
-    })}  
 
     return (
         <>
