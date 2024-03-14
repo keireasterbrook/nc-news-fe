@@ -31,8 +31,14 @@ const Topics = () => {
 
     return (
         <>
-        <h1 className='topicTitle'>{topic}</h1>
-        <Link to='/'><button>Back to all Articles</button></Link>
+        <h1 className='topicTitle'>{topic.charAt(0).toUpperCase() + topic.slice(1)}</h1>
+        
+        <div className='backBtnContainer'>
+        <Link to='/' >
+        <button className='backBtn'>Back to all articles</button>
+        </Link>
+        </div>
+        
         <div className='topicArticlesList'>
         
             {topicArticles.map((article) => {

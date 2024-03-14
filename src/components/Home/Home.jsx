@@ -2,6 +2,7 @@ import './Home.css'
 import newsApi from '../utils/newsAPI';
 import { useEffect,useMemo,useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import globe from '../assets/GlobeEarthArt.gif'
 
 function formatDate(createdAtDate) {
     const date = new Date(createdAtDate);
@@ -16,6 +17,7 @@ function newArticles(articles) {
             newTopics.push(article.topic);
         }
     });
+
 
     return newTopics;
 }
@@ -43,15 +45,21 @@ const Home = () => {
 
     return (
         <>
-        <h1 className='homeTitle'>Breaking News</h1>
-            {allTopics.map((topic) => {
+        <div className='homeTitle'>
+        <h1 ><img src={globe} alt="spinning red globe" className='globe'/>Breaking News</h1>
+        </div>
+        <div className='homeTopicContainer'>
+        {allTopics.map((topic) => {
                 return (
                     <Link to={`/topics/${topic}`}>
-                    <button className='topicBtn' key={topic} >{topic}</button>
+                    <button className='homeTopicBtn' key={topic} >{topic.charAt(0).toUpperCase() + topic.slice(1)}
+                    </button>
                     </Link>
                 )
             })}
-                <select onChange={handleSortChange}>
+            </div>
+            <div className='sortByContainer'>
+                <select className='sortBy' onChange={handleSortChange}>
                 <option value="created_at&order=DESC">Latest</option>
                 <option value="created_at&order=ASC">Oldest</option>
                 <option value="comment_count&order=DESC">Highest Comment Count</option>
@@ -59,12 +67,13 @@ const Home = () => {
                 <option value="votes&order=DESC">Most Votes</option>
                 <option value="votes&order=ASC">Least Votes</option>
             </select>
+            </div>
            
         <div className='homeArticlesList'>
             {articles.map((article, index) => {
-                const isMostRecent = index === 0;
+    
                 return (
-                    <div key={article.article_id} className={`homeArticlesCard ${isMostRecent ? 'mostRecentArticle' : ''}`}>
+                    <div key={index} className={`homeArticlesCard`}>
                         <img src={article.article_img_url} alt="homeArticle image" className='homeArticlesImg'/>
                         <div className='homeArticlesDetails'>
                         <Link to={`/articles/${article.article_id}`} className='homeArticlesTitle'>{article.title}</Link>

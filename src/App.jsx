@@ -1,4 +1,5 @@
 import './App.css'
+import './mediaqueries.css'
 import { BrowserRouter, Routes, Route }  from 'react-router-dom'
 import Nav from './components/Nav/Nav'
 import Home from './components/Home/Home'
@@ -6,6 +7,7 @@ import Article from './components/Article/Article'
 import Comments from './components/Comments/Comments'
 import Topics from './components/Topics/Topics'
 import Error from './components/Error/Error'
+import Users from './components/Users/Users'
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
           <Route path='/articles/:article_id/comments' element={<Comments />}></Route>
           <Route path='/topics/:topic' element={<Topics />}></Route>
           <Route path="/*" element={<Error />} /> 
+          <Route path="/users" element={<Users />} /> 
 
         </Routes>
       

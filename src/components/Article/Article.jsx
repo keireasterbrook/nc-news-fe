@@ -60,7 +60,12 @@ const Article = () => {
     return (
         <div>
             
-        <Link to='/' className='backBtn'><button>Back to all Articles</button></Link>
+        <div className='backBtnContainerArticles'>
+        <Link to='/' >
+        <button className='backBtn'>Back to all articles</button>
+        </Link>
+        </div>
+        
         <div className='article'>
             <h1 className='articleTitle'>{article.title}</h1>
             <img src={article.article_img_url} alt="article image" className='articleImg' />

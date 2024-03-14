@@ -7,14 +7,17 @@
 }
 
 .topicArticlesCard {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 20px;
     width: 400px;
+    background-color: rgb(251, 248, 242);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.057);
+    transition: transform 0.3s ease;
 }
 
 .topicArticlesCard:hover {
-    box-shadow: 4px 3px rgba(0, 0, 0, 0.522);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 .topicArticlesImg {
@@ -45,5 +48,30 @@
     color: red;
 }
 
+.backBtnContainer {
+    display: flex;
+    padding-left: 90px;
+    justify-content: left;
+    margin-bottom: 20px;
+}
 
+.backBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid #ff0000;
+    border-radius: 30px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 500;
+    color: #ff0000;
+    transition: all 0.3s ease;
+    font-size: 25px;
+    background-color: rgb(251, 248, 242);
+}
 
+.backBtn:hover {
+    background-color: #ff0000;
+    color: #fff;
+    cursor: pointer;
+}

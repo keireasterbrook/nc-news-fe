@@ -22,7 +22,6 @@
 .articleTitle {
     font-size: 18px;
     margin-bottom: 5px;
-    margin-top: 40px;
     font-weight: bolder;
     text-decoration: underline;
 }
@@ -31,8 +30,10 @@
     margin: 7px;
 }
 
-.backBtn {
-    display: block;
-    margin-top:100px;
-    text-align: left;
+
+.backBtnContainerArticles {
+    display: flex;
+    padding-left: 90px;
+    justify-content: left;
+    margin-top: 100px;
 }
