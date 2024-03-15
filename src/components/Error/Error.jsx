@@ -5,7 +5,8 @@ const Error = () => {
         <>
         <h1 className='errorTitle'>
         ‼️ 🚨The path you are looking for does not exist ‼️ 🚨
-            </h1></>
+        </h1>
+        </>
     )
 }
 

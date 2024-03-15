@@ -10,30 +10,58 @@
     width: 800px;
 }
 
-
 .articleImg {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
 
-
-
 .articleTitle {
-    font-size: 18px;
+    font-size: 38px;
     margin-bottom: 5px;
-    font-weight: bolder;
+    font-weight: 525;
     text-decoration: underline;
 }
 
 .voteBtn {
-    margin: 7px;
+    padding: 5px 7px;
+    margin: 10px;
+    border: 0.2px dotted transparent;
+    border-radius: 30px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 500;
+    color: #EC2220;
+    transition: all 0.3s ease;
+    font-size: 25px;
+    background-color: transparent;
+
 }
 
+.voteBtn:hover {
+    background-color: #EC2220;
+    color: #fff;
+    cursor: pointer;
+}
 
 .backBtnContainerArticles {
     display: flex;
     padding-left: 90px;
     justify-content: left;
     margin-top: 100px;
+}
+
+.articleAuthor {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.articleBody {
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.articleTopic, .articleVotes, .voteBtn, .articleTime {
+    font-size: 18px;
+    margin: auto;
 }

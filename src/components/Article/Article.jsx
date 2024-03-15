@@ -68,15 +68,16 @@ const Article = () => {
         
         <div className='article'>
             <h1 className='articleTitle'>{article.title}</h1>
+            <p className='articleTime'><strong>Date Posted:</strong> {formatDate(article.created_at)}</p>
             <img src={article.article_img_url} alt="article image" className='articleImg' />
-            <p className='articleAuthor'>Author: {article.author}</p>
+            <p className='articleAuthor'><strong>Author:</strong> {article.author}</p>
             <p className='articleBody'>{article.body}</p>
-            <p className='articleTopic'>Topic: {article.topic}</p>
-            <p className='articleVotes'>Votes: {article.votes} 
+            <p className='articleTopic'><strong>Topic:</strong> {article.topic.charAt(0).toUpperCase() + article.topic.slice(1)}</p>
+            <p className='articleVotes'><strong>Votes:</strong> {article.votes} 
             <button className='voteBtn' onClick={() => {increaseVotes(article.article_id)}}>👍</button>
             <button className='voteBtn' onClick={() => {decreaseVotes(article.article_id)}}>👎</button>
             </p>
-            <p className='articleTime'>Date Posted: {formatDate(article.created_at)}</p>
+            
         </div>
         <div>
             <Comments articleId={articleId} />

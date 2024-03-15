@@ -15,6 +15,14 @@
     .sortByContainer {
         margin-right: 50px; 
     }
+    .usernameNav {
+        display: none;
+    }
+
+    .usersNav {
+        display: flex !important;
+        font-size: 30px !important;
+    }
 }
 
 
@@ -32,6 +40,8 @@
     .article {
         width: 90% !important;
     }
+    
+   
 }
 
 @media screen and (max-width: 600px){
@@ -59,7 +69,8 @@
     }
 
     .homeTitle {
-        font-size: 40px !important;
+        margin-top: 70px !important;
+        font-size: 30px !important;
     }
 
     .logo {
@@ -85,4 +96,37 @@
     .comment {
         width: 90% !important;
     }
+    .globe {
+        width: 20% !important;
+    }
+
+    .usernameNav {
+        display: none;
+    }
+
+    .usersNav {
+        display: flex !important;
+        font-size: 30px !important;
+    }
+
+    .userCard {
+        width: 90% !important;
+        margin-left: 0 !important;
+    }
+
+    .userBtn {
+        width: 50% !important;
+        font-size: 15px !important;
+    }
+
+    .userAvatar {
+        width: 20% !important;
+    }
+
+    .usersName,
+.usersUsername {
+    font-size: 17px !important;
+    text-align: right !important;
+}
+
 }

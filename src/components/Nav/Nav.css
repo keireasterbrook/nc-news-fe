@@ -1,36 +1,50 @@
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: transparent;
     padding: 10px 0;
     overflow: hidden;
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
-
-
 
 .usersNav {
-    align-items: right;
     background-color: transparent;
-    padding-left: 1790px;
-    padding-top: 20px;
+    padding-top: 10px;
     overflow: hidden;
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    color: red;
+    color: #EC2220;
     font-size: 45px;
-
+    text-decoration: none;
+    padding-right: 85px;
+    display: none;
 }
 
-
-
-.navbar button:hover {
-    text-decoration: underline;
-}
 
 .logo {
     width: 3.5%;
     margin-left: 10px;
     text-align: left;
+}
+
+
+.usernameNav {
+    background-color: transparent;
+    overflow: hidden;
+    color: #EC2220;
+    font-size: 20px;
+    text-decoration: none;
+    margin: auto;
+    border-radius: 50px; 
+    border: 2px solid #EC2220; 
+    transition: background-color 0.3s, color 0.3s; 
+    text-align: center;
+    margin-right: 30px;
+}
+
+.usernameNav:hover {
+    background-color: #EC2220; 
+    color: #FFFFFF; 
+    cursor: pointer;
 }

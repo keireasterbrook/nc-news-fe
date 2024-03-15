@@ -1,6 +1,6 @@
 .usersTitle {
     font-size: 43px;
-    color: #ff0000;
+    color: #EC2220;
     text-align: center;
 }
 
@@ -15,17 +15,20 @@
     height: 150px;
     align-items: center;
     border-radius: 10px;
-    text-align: center;
     padding: 20px;
     border: 1px solid rgba(0, 0, 0, 0.556);
     background-color: rgb(251, 248, 242);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.057);
     transition: transform 0.3s ease;
     margin-bottom: 20px; 
-    display: block; 
-    margin: 10px auto; 
+    display:inline-block; 
+    margin: 10px 10px; 
 }
 
+.userCard p{
+    text-align: center;
+    align-items: center;
+}
 .userCard:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
@@ -37,13 +40,35 @@
     border: 3px solid black;
     float: left;
     margin-right: 20px;
+    border-radius: 10px;
 }
-
-
 
 .usersName,
 .usersUsername {
     font-size: 20px;
     margin-bottom: 10px;
     font-weight: bold;
+    text-align: right;
+    margin: 5px;
+}
+
+.userBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid #ff0000;
+    border-radius: 30px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 500;
+    color: #EC2220;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    background-color: rgb(251, 248, 242);
+}
+
+.userBtn:hover {
+    background-color: #EC2220;
+    color: #fff;
+    cursor: pointer;
 }

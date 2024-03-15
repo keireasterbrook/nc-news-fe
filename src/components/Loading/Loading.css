@@ -1,7 +1,24 @@
-.loading {
-    margin-top: 100px;
+.loading-container {
     display: flex;
-    justify-content: center;
-    color: red;
-    font-size: 70px;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+.loading {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 6px solid #EC2220;
+    border-top: 6px solid transparent;
+    animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

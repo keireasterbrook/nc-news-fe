@@ -8,9 +8,10 @@
 }
 
 .commentCard {
-    border: 3px solid rgb(158, 156, 156);
+    background-color: rgba(0, 0, 0, 0.055);
     padding: 10px;
     margin-top: 10px;
+    border-radius: 10px;
 }
 
 .commentsTitle {
@@ -27,8 +28,8 @@
 }
 
 .commentAuthor, .commentVotes, .commentDate {
-    font-size: 13px;
-    color: grey
+    font-size: 15px;
+    color: rgb(85, 85, 85);
 }
 
 #addComment {
@@ -36,3 +37,37 @@
     
 }
 
+
+.submitBtn {
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.delete {
+    font-size: 13px;
+    padding: 5px 10px;
+}
+
+.submitBtn, .delete {
+    
+    margin: 10px;
+    border: 2px solid #ff0000;
+    border-radius: 30px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 500;
+    color: #EC2220;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.submitBtn:hover, .delete:hover {
+    background-color: #EC2220;
+    color: #fff;
+    cursor: pointer;
+}
+
+#addComment {
+    background-color: transparent;
+    border-radius: 5px;
+}
